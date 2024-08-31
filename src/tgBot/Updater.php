@@ -43,7 +43,9 @@ class Updater
 
             if (! is_array($updates) && $updates instanceof Error) {
                 if ($updates->getErrorCode() !== 409) {
-                    throw new \Exception($updates->getDescription());
+                    //throw new \Exception($updates->getDescription());
+                    //due to telegram server side issues!
+                    print($updates->getDescription());
                 }
 
                 continue;
